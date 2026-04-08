@@ -26,7 +26,6 @@
             "S22+"=>"Samsung Galaxy S22+",
             "A03"=>"Samsung Galaxy A03",
             "Xcover5"=>"Samsung Galaxy Xcover 5"
-
         );
         ?>
         <table>
