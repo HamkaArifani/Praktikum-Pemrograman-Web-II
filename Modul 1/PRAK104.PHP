@@ -22,7 +22,6 @@
             "Samsung Galaxy S22+",
             "Samsung Galaxy A03",
             "Samsung Galaxy Xcover 5"
-
         );
         ?>
         <table>
