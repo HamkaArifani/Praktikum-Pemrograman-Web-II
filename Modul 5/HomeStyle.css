@@ -1,0 +1,60 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+.background{
+    width:100%;
+    height:100vh;
+    background-image: linear-gradient(rgba(0, 0,  0, 0.45), rgba(0, 0, 0, 0.45)), url('image/Library.jpg');
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+h1{
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color:#F5DEB3;
+}
+
+p{
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color:#F5DEB3;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center; 
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-pinjam,
+.btn-buku,
+.btn-member {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 1px solid #cd970d;
+  color: #cd970d;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-pinjam:hover,
+.btn-buku:hover,
+.btn-member:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
