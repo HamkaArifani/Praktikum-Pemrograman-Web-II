@@ -37,7 +37,7 @@
     $data_buku = getBukuWithPaging($limit, $offset); 
     ?>
     <div class="card-table">
-        <a href="Home.html" class="btn-top-back">&larr; Kembali</a>
+        <a href="Home.php" class="btn-top-back">&larr; Kembali</a>
         
         <div class="table-header" style="margin-top: 20px;">
             <h2>Daftar Buku</h2>

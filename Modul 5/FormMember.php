@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="button-group">
-                    <a href="Home.html" class="btn-batal">Batal</a>
+                    <a href="Member.php" class="btn-batal">Batal</a>
                     <button type="submit" class="btn-daftar" name="btn_daftar">Daftar</button>
                 </div>
             </form>

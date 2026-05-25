@@ -14,9 +14,9 @@
             <p>Daftar Member, Lihat Informasi Tentang Buku, dan Peminjaman Jadi Lebih Mudah!</p>
 
             <div class="button-group">
-                <a href="FormMember.php" class="btn-member">Daftar Member</a>
+                <a href="Member.php" class="btn-member">Daftar Member</a>
                 <a href="Buku.php" class="btn-buku">Lihat Buku</a>
-                <a href="FormPeminjaman.php" class="btn-pinjam">Pinjam Buku</a>
+                <a href="Peminjaman.php" class="btn-pinjam">Pinjam Buku</a>
             </div>
         </div>
     </body>

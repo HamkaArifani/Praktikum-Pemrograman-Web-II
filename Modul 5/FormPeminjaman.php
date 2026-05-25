@@ -70,7 +70,7 @@
                 </div>
 
                 <div class="button-group">
-                    <a href="Home.html" class="btn-batal">Batal</a>
+                    <a href="Peminjaman.php" class="btn-batal">Batal</a>
                     <button type="submit" class="btn-pinjam" name="btn_pinjam">Pinjam Buku</button>
                 </div>
             </form>
