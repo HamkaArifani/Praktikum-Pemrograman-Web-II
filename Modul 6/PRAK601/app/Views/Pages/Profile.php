@@ -90,7 +90,7 @@
                             <strong>Skill:</strong> <?= $Profile['Skill']; ?>
                         </p>  
                         <p class="fs-5 text-light opacity-90 bio-text">
-                            <strong>Bahasa Pemrograman Yang Telah Kupelajari:</strong> <?= $Profile['Programming_Language']; ?>
+                            <strong>Bahasa Pemrograman Yang Sedang dan Telah Kupelajari Selama Berkuliah:</strong> <?= $Profile['Programming_Language']; ?>
                         </p>  
                         <p class="fs-5 text-light opacity-90 bio-text">
                             <strong>Pengalaman Lomba:</strong> <?= $Profile['Competition_Experience']; ?>
