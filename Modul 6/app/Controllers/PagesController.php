@@ -19,7 +19,7 @@ class PagesController extends BaseController{
         $data['title']= 'Profile';
         $data['Profile'] = $model->getProfilContent();
 
-        return view('Pages/Profile'. $data);
+        return view('Pages/Profile', $data);
     }
     
 }
