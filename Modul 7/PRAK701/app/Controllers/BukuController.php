@@ -12,7 +12,7 @@ class BukuController extends BaseController
 
     public function __construct(){
         $this->bukuModel = new BukuModel();
-        $this->session = new session();
+        $this->session = session();
         helper(['form', 'url']);
     }
 
