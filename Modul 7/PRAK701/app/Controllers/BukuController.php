@@ -18,16 +18,23 @@ class BukuController extends BaseController
 
     public function index()
     {
+        return view('buku/index', [
+            'title' => 'Librazy - Welcome'
+        ]);
+    }
+
+    public function table()
+    {
         $semuaBuku = $this->bukuModel->findAll();
 
         $data = [
-            'title' => 'Daftar Buku',
+            'title' => 'Daftar Buku - Librazy',
             'Buku' => $semuaBuku,
-            'success'   => $this->session->getFlashdata('success'),
-            'error'     => $this->session->getFlashdata('error'),
+            'success'=> $this->session->getFlashdata('success'),
+            'error'=> $this->session->getFlashdata('error'),
         ];
 
-        return view('buku/index', $data);
+        return view('buku/tabel_buku', $data);
     }
 
     public function create(){
