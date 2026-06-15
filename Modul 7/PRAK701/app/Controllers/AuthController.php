@@ -21,7 +21,7 @@ class AuthController extends BaseController
             return redirect()->to('/buku');
         }
 
-        return view('auth/login', [
+        return view('authentication/login', [
             'title' => 'Login',
             'validation' => \Config\Services::validation()
         ]);

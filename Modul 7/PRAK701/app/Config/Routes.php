@@ -10,6 +10,7 @@ $routes->get('buku', 'BukuController::index');
 $routes->get('login', 'AuthController::index');
 $routes->post('login', 'AuthController::login');
 $routes->get('logout', 'AuthController::logout');
+$routes->get('register', 'AuthController::registerForm');
 $routes->post('register', 'AuthController::register');
 
 $routes->group('buku', ['filter' => 'auth'], function($routes) {
