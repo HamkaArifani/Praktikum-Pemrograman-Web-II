@@ -68,6 +68,18 @@ class AuthController extends BaseController
         return redirect()->back()->withInput()->with('error', 'Email atau Password salah. Periksa kembali!');
     }
 
+    public function registerForm()
+    {
+        if ($this->session->get('logged_in')) {
+            return redirect()->to('/buku/tabel');
+        }
+
+        return view('auth/register', [
+            'title'      => 'Register - Librazy',
+            'validation' => \Config\Services::validation()
+        ]);
+    }
+
     public function register(){
         $rules = [
             'username' => [
