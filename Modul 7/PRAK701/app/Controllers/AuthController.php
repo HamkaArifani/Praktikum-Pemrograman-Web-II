@@ -21,9 +21,18 @@ class AuthController extends BaseController
             return redirect()->to('/buku');
         }
 
+        $validation = \Config\Services::validation();
+
+        $errors = session()->getFlashdata('validation_errors');
+        if ($errors) {
+            foreach ($errors as $field => $error) {
+                $validation->setError($field, $error);
+            }
+        }
+
         return view('authentication/login', [
             'title' => 'Login',
-            'validation' => \Config\Services::validation()
+            'validation' => $validation
         ]);
     }
 
@@ -48,7 +57,7 @@ class AuthController extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput();
+            return redirect()->to('/login')->withInput()->with('validation_errors', $this->validator->getErrors());
         }
         
         $email    = $this->request->getPost('email');
@@ -71,12 +80,21 @@ class AuthController extends BaseController
     public function registerForm()
     {
         if ($this->session->get('logged_in')) {
-            return redirect()->to('/buku/tabel');
+            return redirect()->to('/buku/table');
         }
 
-        return view('auth/register', [
+        $validation = \Config\Services::validation();
+
+        $errors = session()->getFlashdata('validation_errors');
+        if ($errors) {
+            foreach ($errors as $field => $error) {
+                $validation->setError($field, $error);
+            }
+        }
+
+        return view('authentication/register', [
             'title'      => 'Register - Librazy',
-            'validation' => \Config\Services::validation()
+            'validation' => $validation
         ]);
     }
 
@@ -109,11 +127,11 @@ class AuthController extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput();
+            return redirect()->to('/register')->withInput()->with('validation_errors', $this->validator->getErrors());
         }
 
         $dataGroup = [
-            'username' -> $this->request->getPost('username'),
+            'username' => $this->request->getPost('username'),
             'email'    => $this->request->getPost('email'),
             'password' => $this->request->getPost('password'),
         ];
@@ -125,6 +143,6 @@ class AuthController extends BaseController
 
     public function logout(){
         $this->session->destroy();
-        return redirect()->to('/login')->with('success', 'Anda berhasil logout.');
+        return redirect()->to('/login');
     }
 }

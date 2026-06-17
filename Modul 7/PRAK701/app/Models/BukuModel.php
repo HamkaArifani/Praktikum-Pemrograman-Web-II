@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class BukuModel extends Model
 {
-    protected $table            = 'bukus';
+    protected $table            = 'buku';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';

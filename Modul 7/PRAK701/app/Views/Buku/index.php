@@ -15,8 +15,8 @@
         <h1 class="text-2xl font-bold text-[#1e293b] mb-2">Librazy</h1>
         <p class="text-sm text-slate-500 mb-8 leading-relaxed">Website Manajemen Buku Perpustakaan Modern</p>
         
-        <a href="<?= base_url('/buku/tabel') ?>" class="block w-full bg-[#10b981] hover:bg-[#059669] text-white text-sm font-semibold py-3 px-5 rounded-md transition-colors duration-200 shadow-sm">
-            Masuk ke Perpustakaan;
+        <a href="<?= base_url('/buku/table') ?>" class="block w-full bg-[#10b981] hover:bg-[#059669] text-white text-sm font-semibold py-3 px-5 rounded-md transition-colors duration-200 shadow-sm">
+            Masuk ke Perpustakaan
         </a>
     </div>
 

@@ -12,8 +12,8 @@ class User extends Migration
             'id'=> [
                 'type'=> 'INT',
                 'constraint' => '12',
-                'unsigned' => 'true',
-                'auto_increment'=> 'true',
+                'unsigned' => true,
+                'auto_increment'=> true,
             ],
             'username'=> [
                 'type' => 'VARCHAR',

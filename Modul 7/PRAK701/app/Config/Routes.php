@@ -14,7 +14,7 @@ $routes->get('register', 'AuthController::registerForm');
 $routes->post('register', 'AuthController::register');
 
 $routes->group('buku', ['filter' => 'auth'], function($routes) {
-    $routes->get('tabel', 'BukuController::tabel');
+    $routes->get('table', 'BukuController::table');
     $routes->get('create', 'BukuController::create');
     $routes->post('store', 'BukuController::store');
     $routes->get('edit/(:num)', 'BukuController::edit/$1');

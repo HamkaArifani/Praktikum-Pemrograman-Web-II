@@ -38,11 +38,20 @@ class BukuController extends BaseController
     }
 
     public function create(){
+        $validation = \Config\Services::validation();
+
+        $errors = session()->getFlashdata('validation_errors');
+        if ($errors) {
+            foreach ($errors as $field => $error) {
+                $validation->setError($field, $error);
+            }
+        }
+
         $data = [
-            'title' => 'Tambah Buku',
-            'validation' => \Config\Services::validation(),
+            'title'      => 'Tambah Buku',
+            'validation' => $validation,
         ];
-        return view('buku/create', $data);
+        return view('buku/store', $data);
     }
 
     public function store() {
@@ -87,7 +96,7 @@ class BukuController extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-        return redirect()->back()->withInput();
+            return redirect()->to('/buku/create')->withInput()->with('validation_errors', $this->validator->getErrors());
         }
 
         $dataBuku = [
@@ -99,23 +108,31 @@ class BukuController extends BaseController
 
         $this->bukuModel->insert($dataBuku);
 
-        return redirect()->to('/buku')->with('success', 'Data buku baru berhasil ditambahkan!');
+        return redirect()->to('/buku/table')->with('success', 'Data buku baru berhasil ditambahkan!');
     }
 
     public function edit($id){
         $buku = $this->bukuModel->find($id);
 
         if (!$buku) {
-        return redirect()->to('/buku')->with('error', 'Data buku tidak ditemukan.');
+        return redirect()->to('/buku/table')->with('error', 'Data buku tidak ditemukan.');
+        }
+
+        $validation = \Config\Services::validation();
+        $errors = session()->getFlashdata('validation_errors');
+        if ($errors) {
+            foreach ($errors as $field => $error) {
+                $validation->setError($field, $error);
+            }
         }
 
         $data = [
             'title' => 'Edit Buku',
             'buku' => $buku,
-            'validation' => \Config\Services::validation(),
+            'validation' => $validation,
         ];
 
-        return view('buku/edit', $data);
+        return view('buku/update', $data);
     }
 
     public function update($id){
@@ -166,7 +183,7 @@ class BukuController extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-        return redirect()->back()->withInput();
+            return redirect()->to('/buku/edit/' . $id)->withInput()->with('validation_errors', $this->validator->getErrors());
         }
 
         $dataBuku = [
@@ -178,7 +195,7 @@ class BukuController extends BaseController
 
         $this->bukuModel->update($id, $dataBuku);
 
-        return redirect()->to('/buku')->with('success', 'Data buku berhasil diperbarui!');
+        return redirect()->to('/buku/table')->with('success', 'Data buku berhasil diperbarui!');
     }
 
     public function delete($id){
@@ -190,6 +207,6 @@ class BukuController extends BaseController
 
         $this->bukuModel->delete($id);
 
-        return redirect()->to('/buku')->with('success', 'Data buku berhasil dihapus!');
+        return redirect()->to('/buku/table')->with('success', 'Data buku berhasil dihapus!');
     }
 }
