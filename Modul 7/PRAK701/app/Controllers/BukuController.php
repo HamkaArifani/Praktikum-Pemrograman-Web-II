@@ -85,12 +85,12 @@ class BukuController extends BaseController
             ],
             'tahun_terbit' => [
                 'label' => 'Tahun Terbit',
-                'rules' => 'required|numeric|greater_than[1800]|less_than[2027]',
+                'rules' => 'required|numeric|greater_than[1800]|less_than[2024]',
                 'errors' => [
                     'required' => 'Tahun terbit buku harus diisi.',
                     'numeric' => 'Tahun terbit buku harus berupa angka.',
                     'greater_than' => 'Tahun terbit buku harus lebih besar dari 1800',
-                    'less_than' => 'Tahun terbit harus lebih kecil dari 2027.',
+                    'less_than' => 'Tahun terbit harus lebih kecil dari 2024.',
                 ],
             ],
         ];
@@ -172,12 +172,12 @@ class BukuController extends BaseController
             ],
             'tahun_terbit' => [
                 'label' => 'Tahun Terbit',
-                'rules' => 'required|numeric|greater_than[1800]|less_than[2027]',
+                'rules' => 'required|numeric|greater_than[1800]|less_than[2024]',
                 'errors' => [
                     'required' => 'Tahun terbit buku harus diisi.',
                     'numeric' => 'Tahun terbit buku harus berupa angka.',
                     'greater_than' => 'Tahun terbit buku harus lebih besar dari 1800',
-                    'less_than' => 'Tahun terbit harus lebih kecil dari 2027.',
+                    'less_than' => 'Tahun terbit harus lebih kecil dari 2024.',
                 ],
             ],
         ];
